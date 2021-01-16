@@ -1,0 +1,77 @@
+//Variables de Estilos//
+$mainFont: 'Nunito', sans-serif;
+$blue:#037ef3;
+$gray:#caccd1;
+$white:#f3f4f7;
+$orange:#f48924;
+
+body
+{    
+    margin: 0;
+    padding: 0;      
+    font-family: $mainFont;     
+    #titleApp        
+    {        
+        font-weight: 700;
+        font-size: xx-large;
+        text-align: center;
+    }
+
+    #mainContainerList
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;        
+
+        #containerList
+        {
+            display: flex;
+            flex-direction: column;
+            width: 90%;   
+            height: 450px;                         
+            border-radius: 10px;            
+            background-color: #f3f4f7;  
+            overflow-y: scroll;
+                     
+
+            .itemTask
+            {
+                width: 90%;
+                display: flex;
+                justify-content: space-around;                     
+                align-self: center;  
+                margin-top: 2%;     
+                border-bottom: 1px solid $gray;
+                #taskName
+                {                    
+                    width: 70%;
+                    align-self: center;
+                }                         
+                #priorityText
+                {
+                    width: 10%;
+                    background-color:$orange;
+                    border-radius: 20px;
+                    padding: 1%;
+                    text-align: center;
+                    color: $white;
+                }      
+                img
+                {
+                    width: 30px;
+                    height: 30px;
+                    align-self: center;
+                }                                    
+            }
+        }
+    }
+
+    #addTaskContainer
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+    }
+
+    
+}
