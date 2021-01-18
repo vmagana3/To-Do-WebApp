@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -36,7 +37,6 @@ body #mainContainerList #containerList .itemTask #taskName {
 }
 body #mainContainerList #containerList .itemTask #priorityText {
   width: 10%;
-  background-color: #f48924;
   border-radius: 20px;
   padding: 1%;
   text-align: center;
@@ -46,6 +46,14 @@ body #mainContainerList #containerList .itemTask img {
   width: 30px;
   height: 30px;
   align-self: center;
+}
+body #containerList::-webkit-scrollbar {
+  width: 7px;
+  /* Tamaño del scroll en vertical */
+}
+body #containerList::-webkit-scrollbar-thumb {
+  background: #037ef3;
+  border-radius: 4px;
 }
 body .modalContainer {
   display: none;
@@ -66,6 +74,7 @@ body .modalContainer .modal-content {
   padding: 20px;
   border: 1px solid lightgray;
   width: 40%;
+  border-radius: 10px;
 }
 body .modalContainer .modal-content .close {
   color: #aaaaaa;
@@ -80,7 +89,7 @@ body .modalContainer .modal-content .modalContainer .close:focus {
   cursor: pointer;
 }
 body .modalContainer .modal-content #newTask {
-  width: 50%;
+  width: 100%;
   height: 30px;
   border: none;
   border-bottom: 1px solid #caccd1;
