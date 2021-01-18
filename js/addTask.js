@@ -2,6 +2,7 @@
 
 //Get button, add event click, get values and call Add task function//
  buttonAdd = document.getElementById('addTaskButton');
+ 
 
  buttonAdd.addEventListener('click', function(){
 
@@ -19,8 +20,20 @@
      console.log(elementTask);
      var listContainer = document.getElementById('containerList');
      listContainer.appendChild(elementTask);
-
+     setTimeout(closeModal,400);
+          
  }
+
+ //Close modal//
+ function closeModal()
+ {
+    var modal = document.getElementById("tvesModal");
+    modal.style.display = "none";
+    body.style.position = "inherit";
+    body.style.height = "auto";
+    body.style.overflow = "visible";
+ }
+
 
 //create HTML element//
  function createTaskElement(task,priority)

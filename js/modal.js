@@ -20,7 +20,6 @@ if(document.getElementById("btnModal"))
     span.onclick = function()
     {
         modal.style.display = "none";
-
         body.style.position = "inherit";
         body.style.height = "auto";
         body.style.overflow = "visible";
