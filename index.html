@@ -11,11 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">    
 </head>
 <body>
+
+    <!--Tittle App-->
     <div id="titleApp">
         <p>Welcome To Your Task App</p>                
     </div>
 
-
+    <!--Main container list-->
     <div id="mainContainerList">
         <div id="containerList">
 
@@ -39,16 +41,36 @@
                 <p id="priorityText">Low</p>
                 <img src="./img/delete.png" alt="">
             </div>
+        </div>
+    </div>
 
-            
+    <!--Modal-->
+    <div id="tvesModal" class="modalContainer">          
+        <!--Contenido de la modal-->  
+        <div class="modal-content">
+            <span class="close">×</span>   
 
-            
+            <p>Add New Task</p>
+            <input id="newTask" type="text">  
+
+            <p>Select Priority Level</p>                   
+            <select name="" id="selectPriority">
+                <option value="High">High</option>               
+                <option value="Medium">Medium</option>               
+                <option value="Low">Low</option>               
+            </select>
+
+            <p></p>
+            <button id="addTaskButton">Add</button>
 
         </div>
     </div>
 
+    <!--Button Add Task-->
     <div id="addTaskContainer">        
-        <img style="width: 50px; height: 50px;" src="./img/addIcon.png" alt="">                                
+        <img id="btnModal" style="width: 50px; height: 50px;" src="./img/addIcon.png" alt="">                                
     </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 </html>
