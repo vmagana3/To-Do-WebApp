@@ -21,8 +21,15 @@
      var listContainer = document.getElementById('containerList');
      listContainer.appendChild(elementTask);
      setTimeout(closeModal,400);
-          
+
+     
+     ////
+     elementTask.addEventListener('click',function(){                     
+        this.childNodes[1].style.textDecoration = 'line-through';  
+        this.childNodes[1].style.color = 'gray';           
+    });
  }
+
 
  //Close modal//
  function closeModal()
@@ -58,8 +65,8 @@
      var newTask = document.createElement('div');
      newTask.className = "itemTask"
 
-     var imgCheck = document.createElement('img')
-     imgCheck.setAttribute('src','./img/check.svg')
+     var imgCheck = document.createElement('img');
+     imgCheck.setAttribute('src','./img/check.svg');     
 
      var taskName = document.createElement('p');
      taskName.setAttribute('id','taskName');     
@@ -72,7 +79,8 @@
 
      var imgDelete = document.createElement('img')
      imgDelete.setAttribute('src','./img/delete.png')
-
+     
+     
      //append child elements//
      newTask.appendChild(imgCheck);
      newTask.appendChild(taskName);
