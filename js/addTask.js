@@ -7,42 +7,13 @@
  buttonAdd.addEventListener('click', function(){
 
     newTask = document.getElementById('newTask').value; 
-    priority = document.getElementById('selectPriority').value;
-
+    priority = document.getElementById('selectPriority').value;    
     createTaskElement(newTask,priority);
  })
 
 
 
- //Add element to DOM//
- function addTaskElement(elementTask)
- {
-     console.log(elementTask);
-     var listContainer = document.getElementById('containerList');
-     listContainer.appendChild(elementTask);
-     setTimeout(closeModal,400);
-
-     
-     ////
-     elementTask.addEventListener('click',function(){                     
-        this.childNodes[1].style.textDecoration = 'line-through';  
-        this.childNodes[1].style.color = 'gray';           
-    });
- }
-
-
- //Close modal//
- function closeModal()
- {
-    var modal = document.getElementById("tvesModal");
-    modal.style.display = "none";
-    body.style.position = "inherit";
-    body.style.height = "auto";
-    body.style.overflow = "visible";
- }
-
-
-//create HTML element//
+ //----------Create HTML element----------//
  function createTaskElement(task,priority)
  {
 
@@ -57,10 +28,7 @@
     else if(priority === 'Low')
     {
         backGround = '#037ef3'
-    }
-
-     console.log(task);
-     console.log(priority);     
+    }       
 
      var newTask = document.createElement('div');
      newTask.className = "itemTask"
@@ -89,4 +57,62 @@
 
      return addTaskElement(newTask);     
  }
- 
+
+
+ //---------Add element to DOM----------//
+ function addTaskElement(elementTask)
+ {     
+     var listContainer = document.getElementById('containerList');
+     listContainer.appendChild(elementTask);
+     setTimeout(closeModal,200);        
+     
+     checkButton = elementTask.childNodes[0];
+     checkText = elementTask.childNodes[1];
+     deleteButton = elementTask.childNodes[3];
+
+     checkTask(checkButton,checkText);     
+     deleteTask(deleteButton);   
+ }
+
+
+
+
+  //-----------Close modal----------//
+  function closeModal()
+  {
+     var modal = document.getElementById("tvesModal");
+     modal.style.display = "none";
+     body.style.position = "inherit";
+     body.style.height = "auto";
+     body.style.overflow = "visible";
+  }
+
+  //----------Check task----------//
+  function checkTask(buttonCheck,textCheck)
+  {
+      buttonCheck.addEventListener('click',function(){                                    
+          
+        if(textCheck.style.textDecoration != 'line-through')
+        {        
+            this.setAttribute('src','./img/checked.svg')
+            textCheck.style.textDecoration = 'line-through';
+            textCheck.style.color = 'gray';            
+        }
+        else{            
+            this.setAttribute('src','./img/check.svg')
+            textCheck.style.textDecoration = 'none'             
+            textCheck.style.color = 'black';
+        }
+      })      
+  }
+
+
+  //----------Check task----------//
+  function deleteTask(deleteButton)
+  {
+      deleteButton.addEventListener('click',function()
+      {
+        var listContainer = document.getElementById('containerList');
+        listContainer.removeChild(this.parentNode);        
+      })      
+  }
