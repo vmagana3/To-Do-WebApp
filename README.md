@@ -5,8 +5,8 @@ Check below some resoruces that i used to complement the project.
 
 # You can use this tool from
 https://vmagana3.github.io/To-Do-WebApp/
-(img/List.PNG)
-(img/modal.PNG)
+![Screenshot](img/List.PNG)
+![Screenshot](img/modal.PNG)
 
 ## Attributions
 Icons from 
