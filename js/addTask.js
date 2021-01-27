@@ -12,7 +12,6 @@
  })
 
 
-
  //----------Create HTML element----------//
  function createTaskElement(task,priority)
  {
